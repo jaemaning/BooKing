@@ -1,0 +1,64 @@
+version: '3'
+
+volumes:
+  booking_booking_maria:
+    external:
+      name: booking_booking_maria
+  booking_booking_mongo:
+    external:
+      name: booking_booking_mongo
+
+networks:
+  booking_booking_network:
+    name: booking_booking_network
+    driver: bridge
+
+services:
+  booking_mongodb:
+    image: mongo
+    restart: on-failure
+    container_name: booking-mongodb
+    ports:
+      - "27019:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: booking
+      MONGO_INITDB_ROOT_PASSWORD: booking123!
+    networks:
+      - booking_booking_network
+    volumes:
+      - booking_booking_mongo:/data/db
+  booking_booking_maria:
+    restart: on-failure
+    image: 'mariadb:10.3'
+    container_name: 'booking-maria-container'
+    environment:
+      MYSQL_DATABASE: booking_booking
+      MYSQL_USER: booking  
+      MYSQL_PASSWORD: booking123!!
+      MYSQL_ROOT_PASSWORD: booking123!
+      TZ: Asia/Seoul
+    networks:
+      - booking_booking_network
+    volumes:
+      - 'booking_booking_maria:/var/lib/mysql'
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --wait_timeout=3600
+      - --max_connections=500
+      - --interactive_timeout=3600
+    ports:
+      - '3370:3306'
+
+  booking_booking_server:
+    restart: on-failure
+    depends_on:
+      - booking_booking_maria
+    image: 'booking-image:latest'
+    container_name: 'booking-container'
+    environment:
+      CONFIG_URL: 'http://k9c206.p.ssafy.io:8123/'
+    ports:
+      - '9003:9003'
+    networks:
+      - booking_booking_network

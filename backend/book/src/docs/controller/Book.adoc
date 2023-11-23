@@ -1,0 +1,19 @@
+== 책 API
+
+=== 책 조회 API Title
+
+==== HTTP REQUEST
+include::{snippets}/book/listByTitle/http-request.adoc[]
+include::{snippets}/book/listByTitle/httpie-request.adoc[]
+
+==== HTTP RESPONSE
+
+include::{snippets}/book/listByTitle/http-response.adoc[]
+include::{snippets}/book/listByTitle/response-body.adoc[]
+include::{snippets}/book/listByTitle/response-fields.adoc[]
+
+=== 책 조회 ISBN
+==== HTTP Request
+include::{snippets}/book/listByIsbn/http-request.adoc[]
+==== HTTP Response
+include::{snippets}/book/listByIsbn/http-response.adoc[]

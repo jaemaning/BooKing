@@ -1,0 +1,16 @@
+=== 모임 생성
+==== HTTP Request
+include::{snippets}/meeting/create/http-request.adoc[]
+include::{snippets}/meeting/create/request-fields.adoc[]
+
+=== 모임 단일 조회
+==== HTTP Request
+include::{snippets}/meeting/findById/http-request.adoc[]
+==== HTTP Response
+include::{snippets}/meeting/findById/http-response.adoc[]
+
+=== 모임 전체 조회
+==== HTTP Request
+include::{snippets}/meeting/findAll/http-request.adoc[]
+==== HTTP Response
+include::{snippets}/meeting/findAll/http-response.adoc[]

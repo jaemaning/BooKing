@@ -1,0 +1,60 @@
+=== 1. 로그인
+==== HTTP Request
+include::{snippets}/member/login/http-request.adoc[]
+include::{snippets}/member/login/request-fields.adoc[]
+==== HTTP Response
+include::{snippets}/member/login/http-response.adoc[]
+
+=== 2. 회원 가입
+==== HTTP Requesst
+include::{snippets}/member/signup/http-request.adoc[]
+include::{snippets}/member/signup/request-fields.adoc[]
+
+===== HTTP Response
+include::{snippets}/member/signup/http-response.adoc[]
+
+=== 3. 회원 수정
+==== HTTP Request
+include::{snippets}/member/modify/http-request.adoc[]
+include::{snippets}/member/modify/request-fields.adoc[]
+==== HTTP Response
+include::{snippets}/member/modify/http-response.adoc[]
+
+=== 4. 회원 정보 조회
+==== HTTP Request
+include::{snippets}/member/info/http-request.adoc[]
+include::{snippets}/member/info/path-parameters.adoc[]
+==== HTTP Response
+include::{snippets}/member/info/http-response.adoc[]
+
+=== 5. 회원 탈퇴
+
+==== HTTP Request
+include::{snippets}/member/delete/http-request.adoc[]
+include::{snippets}/member/delete/request-fields.adoc[]
+
+==== HTTP Response
+include::{snippets}/member/delete/http-response.adoc[]
+
+=== 6. 회원 위치 수정
+==== HTTP Request
+include::{snippets}/member/location/http-request.adoc[]
+include::{snippets}/member/location/request-fields.adoc[]
+==== HTTP Response
+include::{snippets}/member/location/http-response.adoc[]
+
+=== 7. 회원 조회 PK
+==== HTTP Request
+include::{snippets}/member/info-pk/http-request.adoc[]
+include::{snippets}/member/info-pk/path-parameters.adoc[]
+==== HTTP Response
+include::{snippets}/member/info-pk/http-response.adoc[]
+
+=== 8. 회원 조회 닉네임
+==== HTTP Request
+include::{snippets}/member/info-nick/http-request.adoc[]
+include::{snippets}/member/info-nick/path-parameters.adoc[]
+==== HTTP Response
+include::{snippets}/member/info-nick/http-response.adoc[]
+
+

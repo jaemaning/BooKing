@@ -1,0 +1,47 @@
+version: '3'
+
+volumes:
+  booking_member_maria:
+    external:
+      name: booking_member_maria
+
+networks:
+  member_maria_network:
+    driver: bridge
+
+services:
+  booking_member_maria:
+    restart: on-failure
+    image: 'mariadb:latest'
+    container_name: 'member-db-container'
+    environment:
+      MYSQL_ROOT_PASSWORD: booking123!  # root 사용자의 비밀번호입니다.
+      MYSQL_DATABASE: booking-member  # 생성될 데이터베이스의 이름입니다.
+      # Optional: 다음 환경 변수를 사용하여 특정 사용자를 만들고 해당 데이터베이스에 모든 권한을 부여할 수 있습니다.
+      MYSQL_USER: booking  # 새 사용자의 이름입니다.
+      MYSQL_PASSWORD: booking123!  # 새 사용자의 비밀번호입니다.
+      TZ: Asia/Seoul
+    networks:
+      - member_maria_network
+    volumes:
+      - 'booking_member_maria:/var/lib/mysql'
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+
+  booking_member_server:
+    restart: on-failure
+    depends_on:
+      - booking_member_maria
+    image: 'member-image:latest'
+    container_name: 'member-container'
+    environment:
+      CONFIG_URL: 'http://172.26.14.101:8123'
+    #      SPRING_DATASOURCE_URL: 'jdbc:mariadb://booking_member_maria:3306/booking-member'
+    #      SPRING_DATASOURCE_USERNAME: root
+    #      SPRING_DATASOURCE_PASSWORD: booking123!
+
+    ports:
+      - '9001:9001'
+    networks:
+      - member_maria_network

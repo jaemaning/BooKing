@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Booking1" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- 상태바 색상 변경 -->
+        <item name="android:statusBarColor">@color/booking_1</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowSplashScreenBackground">@color/booking_1</item>
+<!--        <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo</item>-->
+        <item name="android:windowSplashScreenAnimationDuration">500</item>
+<!--        <item name="android:postSplashScreenTheme">@style/Theme.MyApp</item>-->
+    </style>
+</resources>

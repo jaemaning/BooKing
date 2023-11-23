@@ -1,0 +1,8 @@
+
+spring:
+  application:
+    name: book-service
+  cloud:
+    config:
+      uri: ${config.url} # ???? Config ?? ??
+      profile: ${spring.profiles.active:default} # ?? ???? ??? (???? 'default')

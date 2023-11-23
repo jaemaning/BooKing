@@ -1,0 +1,19 @@
+== 내 서재 API
+=== 내 서재 책 등록
+==== HTTP Request
+include::{snippets}/memberBook/register/http-request.adoc[]
+include::{snippets}/memberBook/register/request-fields.adoc[]
+==== HTTP Response
+include::{snippets}/memberBook/register/http-response.adoc[]
+=== 내 서재 책 리스트 조회
+==== HTTP Request
+include::{snippets}/memberBook/getList/http-request.adoc[]
+==== HTTP Response
+include::{snippets}/memberBook/getList/http-response.adoc[]
+include::{snippets}/memberBook/getList/response-fields.adoc[]
+=== 내 서재 책 디테일 조회
+==== HTTP Request
+include::{snippets}/memberBook/getDetail/http-request.adoc[]
+==== HTTP Response
+include::{snippets}/memberBook/getDetail/http-response.adoc[]
+include::{snippets}/memberBook/getDetail/response-fields.adoc[]

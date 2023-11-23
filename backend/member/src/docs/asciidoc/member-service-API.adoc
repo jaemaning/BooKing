@@ -1,0 +1,10 @@
+==== MEMBER SERVICE API
+=== 1. /api/members
+include::member/member.adoc[]
+---
+=== 2. /api/payments
+include::payment/payment.adoc[]
+---
+=== 3. /api/follows
+include::follow/follow.adoc[]
+---

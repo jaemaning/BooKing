@@ -1,0 +1,20 @@
+=== 팔로우
+include::{snippets}/follow/follow/http-request.adoc[]
+include::{snippets}/follow/follow/path-parameters.adoc[]
+=== 언팔로우
+include::{snippets}/follow/unfollow/http-request.adoc[]
+include::{snippets}/follow/unfollow/path-parameters.adoc[]
+=== 팔로워 조회
+==== HTTP Request
+include::{snippets}/follow/getFollowers/http-request.adoc[]
+include::{snippets}/follow/getFollowers/path-parameters.adoc[]
+==== HTTP Response
+include::{snippets}/follow/getFollowers/http-response.adoc[]
+include::{snippets}/follow/getFollowers/response-fields.adoc[]
+=== 팔로잉 조회
+==== HTTP Request
+include::{snippets}/follow/getFollowings/http-request.adoc[]
+include::{snippets}/follow/getFollowings/path-parameters.adoc[]
+==== HTTP Response
+include::{snippets}/follow/getFollowings/http-response.adoc[]
+include::{snippets}/follow/getFollowings/response-fields.adoc[]

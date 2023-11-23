@@ -1,0 +1,77 @@
+version: '3'
+
+volumes:
+  booking_chat_service:
+    external:
+      name: booking_chat_service
+
+networks:
+  booking_chat_network:
+    name: booking_chat_network
+    driver: bridge
+
+services:
+  chat_zookeeper:
+    image: wurstmeister/zookeeper
+    container_name: chat-zookeeper
+    networks:
+      - booking_chat_network
+    ports:
+      - "2181:2181"
+  chat_kafka:
+    image: wurstmeister/kafka
+    container_name: chat-kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: chat_kafka
+      KAFKA_CREATE_TOPICS: "Chat:1:1"
+      KAFKA_ZOOKEEPER_CONNECT: chat_zookeeper:2181
+    networks:
+      - booking_chat_network
+    volumes:
+      - /var/run/docker.sock
+    depends_on:
+      - chat_zookeeper
+  chat_mongodb:
+    image: mongo
+    restart: always
+    container_name: chat-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: booking
+      MONGO_INITDB_ROOT_PASSWORD: booking123!
+    networks:
+      - booking_chat_network
+    depends_on:
+      - chat_kafka
+    volumes:
+      - booking_chat_service:/data/db
+  chat_redis:
+    image: redis
+    container_name: chat-redis
+    ports:
+      - "6379:6379"
+    restart: always
+    depends_on:
+      - chat_mongodb
+    networks:
+      - booking_chat_network
+    environment:
+      - REDIS_PASSWORD=booking123!!
+    command: redis-server --requirepass booking123!!
+  booking_chat_server:
+    restart: on-failure
+    depends_on:
+      - chat_redis
+    image: 'chat-image:latest'
+    container_name: 'chat-container'
+    environment:
+      CONFIG_URL: 'http://k9c206.p.ssafy.io:8123/'
+      KAFKA_SERVER_PORT: 'chat_kafka:9092'
+    networks:
+      - booking_chat_network
+    ports:
+      - '9002:9002'
+

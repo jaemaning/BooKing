@@ -1,0 +1,17 @@
+=== 결제 준비 요청
+==== (이것만 요청하면 사용자가 정상적으로 결제하면 결제 승인으로 자동으로 Redirect)
+include::{snippets}/payment/ready/http-request.adoc[]
+include::{snippets}/payment/ready/request-fields.adoc[]
+
+=== 결제 승인
+==== HTTP Request
+include::{snippets}/payment/success/http-request.adoc[]
+==== HTTP Response
+include::{snippets}/payment/success/http-response.adoc[]
+
+=== 포인트 송금
+==== HTTP Request
+include::{snippets}/payment/send/http-request.adoc[]
+include::{snippets}/payment/send/request-fields.adoc[]
+==== HTTP Response
+include::{snippets}/payment/send/http-response.adoc[]

@@ -1,0 +1,38 @@
+version: '3'
+
+volumes:
+  booking_book_service:
+    external:
+      name: booking_book_service
+
+networks:
+  booking_book_network:
+    name: booking_book_network
+    driver: bridge
+
+services:
+  book_mongodb:
+    image: mongo
+    restart: always
+    container_name: book-mongodb
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: booking
+      MONGO_INITDB_ROOT_PASSWORD: booking123!
+    networks:
+      - booking_book_network
+    volumes:
+      - booking_book_service:/data/db
+  booking_book_server:
+    restart: on-failure
+    depends_on:
+      - book_mongodb
+    image: 'book-image:latest'
+    container_name: 'book-container'
+    environment:
+      CONFIG_URL: 'http://k9c206.p.ssafy.io:8123/'
+    networks:
+      - booking_book_network
+    ports:
+      - '8800:8800'

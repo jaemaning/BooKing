@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "159905672958",
+    "project_id": "booking-89b8f",
+    "storage_bucket": "booking-89b8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159905672958:android:5151aeb2f06a5d91163faf",
+        "android_client_info": {
+          "package_name": "com.ssafy.booking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159905672958-4cef5b8un9kf5ebqfars6a4hjcme8ftj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ssafy.booking",
+            "certificate_hash": "1aa0b72238ebc2134015a9078225ea38ed7875d8"
+          }
+        },
+        {
+          "client_id": "159905672958-eq49qa70mprr2vt1bbpav5dbh2ni24jb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ssafy.booking",
+            "certificate_hash": "d9bf0ad271fa90cf72e87c090de1b1472eb91703"
+          }
+        },
+        {
+          "client_id": "159905672958-udjjg5penp5rbq86a5nh3cvlj3nts35r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ssafy.booking",
+            "certificate_hash": "10c6e6add5c40bf4ec0462b85c1237adf784ec94"
+          }
+        },
+        {
+          "client_id": "159905672958-ibnf6ml28nh3s7ntteoeafj2m516lrl2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCEj-L1XUTz2ccaGpmJS7ZGP1XJ-6ngFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159905672958-f8ur7frnhkcimcda9obrc12pvbhsabp2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,62 @@
+== 채팅방 API
+
+=== 모임 생성 시 채팅방 생성
+
+==== HTTP Request
+include::{snippets}/chatroom/init/request-fields.adoc[]
+include::{snippets}/chatroom/init/http-request.adoc[]
+include::{snippets}/chatroom/init/request-body.adoc[]
+
+==== HTTP Response
+include::{snippets}/chatroom/init/http-response.adoc[]
+
+=== 모임 참가 시 채팅방 참가
+
+==== HTTP Request
+include::{snippets}/chatroom/join/request-fields.adoc[]
+include::{snippets}/chatroom/join/request-body.adoc[]
+include::{snippets}/chatroom/join/http-request.adoc[]
+
+==== HTTP Response
+include::{snippets}/chatroom/join/http-response.adoc[]
+
+=== 모임 탈퇴, 종료 시 채팅방 나가기
+
+==== Http Request
+include::{snippets}/chatroom/exit/http-request.adoc[]
+include::{snippets}/chatroom/exit/request-fields.adoc[]
+include::{snippets}/chatroom/exit/request-body.adoc[]
+
+==== Http Response
+include::{snippets}/chatroom/exit/http-response.adoc[]
+
+=== 회원의 채팅 방 목록 불러오기
+
+==== Http Request
+include::{snippets}/chatroom/list/http-request.adoc[]
+
+==== Http Response
+include::{snippets}/chatroom/list/response-body.adoc[]
+include::{snippets}/chatroom/list/response-fields.adoc[]
+include::{snippets}/chatroom/list/http-response.adoc[]
+
+=== 채팅방 접속
+
+==== Http Request
+include::{snippets}/chatroom/enter/http-request.adoc[]
+include::{snippets}/chatroom/enter/path-parameters.adoc[]
+include::{snippets}/chatroom/enter/request-body.adoc[]
+
+==== Http Response
+include::{snippets}/chatroom/enter/response-body.adoc[]
+include::{snippets}/chatroom/enter/response-fields.adoc[]
+include::{snippets}/chatroom/enter/http-response.adoc[]
+
+=== 채팅방 연결 끊길 때 보내는 api
+
+==== Http Request
+include::{snippets}/chatroom/disconnect/path-parameters.adoc[]
+include::{snippets}/chatroom/disconnect/http-request.adoc[]
+
+==== Http Response
+include::{snippets}/chatroom/disconnect/http-response.adoc[]

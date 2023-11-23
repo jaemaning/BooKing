@@ -1,0 +1,52 @@
+#server:
+#  port: 9001
+#
+#spring:
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
+#  datasource:
+#    driverClassName: org.mariadb.jdbc.Driver
+#    url: jdbc:mariadb://localhost:3306/booking-member
+#    username: root
+#    password: 53265326
+#  redis:
+#    host: localhost  # Redis 서버 주소
+#    port: 6379       # Redis 서버 포트
+#    password:  # 필요한 경우 비밀번호 설정
+#    timeout: 5000
+#  security:
+#    oauth2:
+#      client:
+#        registration:
+#          google:
+#            client-id: 137073411864-kuvh0b00kv1unku8626puk166qbuq3qd.apps.googleusercontent.com
+#            client-secret: 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
+#            scope:
+#              - email
+#              - profile
+#          kakao:
+#            client-id: bbb6769308dbeb23d17ef4b2aa5b9f0f
+#            client-secret: ofOfH47JzTvjaEhdkaZ6MulPyoe9mclX
+#            client-name: Kakao
+#            client-authentication-method: POST
+#            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+#            authorization-grant-type: authorization_code
+#            scope:
+#              - profile_nickname
+#              - profile_image
+#        provider:
+#          kakao:
+#            authorizationUri: https://kauth.kakao.com/oauth/authorize
+#            tokenUri: https://kauth.kakao.com/oauth/token
+#            userInfoUri: https://kapi.kakao.com/v2/user/me
+#            userNameAttribute: id
+#
+#
+## -- Eureka client
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    serviceUrl:
+#      defaultZone: http://127.0.0.1:9000/eureka/

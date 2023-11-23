@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    config:
+      uri: ${config.url} # 여러분의 Config 서버 주소
+      profile: ${spring.profiles.active:default} # 현재 활성화된 프로필 (기본값은 'default')
+

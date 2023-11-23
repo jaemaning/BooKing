@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    discovery:
+      enabled: false
+    config:
+      allow-override: false
+  data:
+    mongodb:
+      host: localhost
+      port: 12346
+      database: book
+  mongodb:
+    embedded:
+      version: 3.2.3
